@@ -1,0 +1,54 @@
+id,title,url,keywords,description
+1,Home,/home.php,home,Go to the main dashboard. Follow Link: /home.php
+2,Stock Adjustment,/adj_approve_view.php,"stock, adjustment",Adjust stock quantities. Follow Link: /adj_approve_view.php
+3,Estimate,/report_estimate.php,estimate,View and manage estimates. Follow Link: /report_estimate.php
+4,Order,/part_order_search.php,order,Search and manage orders. Follow Link: /part_order_search.php
+5,Search,/ps_search.php,search,Search for parts or documents. Follow Link: /ps_search.php
+6,Active,/jo_view.php,active,View active job orders. Follow Link: /jo_view.php
+7,Feedback,/jo_fb.php,feedback,Submit or view feedback. Follow Link: /jo_fb.php
+8,Quotation-Add,/ps_frm_qot_add.php,quotation-add,Add a new quotation. Follow Link: /ps_frm_qot_add.php
+9,Quotation-Search,/ps_qot_search.php,quotation-search,Search for quotations. Follow Link: /ps_qot_search.php
+10,GRN,/report_grn.php,grn,View goods received notes. Follow Link: /report_grn.php
+11,Stock,/report_stock.php,stock,Check stock reports. Follow Link: /report_stock.php
+12,Invoice,/invoice_view.php,invoice,View invoices. Follow Link: /invoice_view.php
+13,Receipt,/receipt_view.php,receipt,View receipts. Follow Link: /receipt_view.php
+14,Pre-GRN,/pre_grn_view.php,pre-grn,View pre-goods received notes. Follow Link: /pre_grn_view.php
+15,PO,/part_po_search.php,po,Search purchase orders. Follow Link: /part_po_search.php
+16,Reservation,/reserve_view.php,reservation,View reservations. Follow Link: /reserve_view.php
+17,Sublet,/sublet_search.php,sublet,Manage sublet jobs. Follow Link: /sublet_search.php
+18,Parts,/product_view.php,parts,View and manage parts. Follow Link: /product_view.php
+19,Adjustment,/adj_view.php,adjustment,View adjustments. Follow Link: /adj_view.php
+20,Stock Balance,/report_stock_balance.php,"stock, balance",Check stock balances. Follow Link: /report_stock_balance.php
+21,Job Order,/report_jo.php,"job, order",View job orders. Follow Link: /report_jo.php
+22,Stock Value,/report_stock_val.php,"stock, value",Check stock values. Follow Link: /report_stock_val.php
+23,FRU,/report_fru.php,fru,View FRU reports. Follow Link: /report_fru.php
+24,Cancelled Invoice,/report_cancelled_invoice.php,"cancelled, invoice",View cancelled invoices. Follow Link: /report_cancelled_invoice.php
+25,Points,/report_point_balance.php,points,Check point balances. Follow Link: /report_point_balance.php
+26,Staff Jobs,/job_staff_view.php,"staff, jobs",View staff job assignments. Follow Link: /job_staff_view.php
+27,Report,/acc_report.php,report,View various reports. Follow Link: /acc_report.php
+28,Customers,/customer_view.php,customers,View customer information. Follow Link: /customer_view.php
+29,Vehicle,/vehicle_view.php,vehicle,View vehicle details. Follow Link: /vehicle_view.php
+30,Labour,/labour_view.php,labour,View labour details. Follow Link: /labour_view.php
+31,Vendor,/vendor_view.php,vendor,View vendor information. Follow Link: /vendor_view.php
+32,Variables,/var_view.php,variables,Manage system variables. Follow Link: /var_view.php
+33,Asset,/asset_view.php,asset,View asset information. Follow Link: /asset_view.php
+34,View,/asset_view.php,view,View asset details. Follow Link: /asset_view.php
+35,Pre-Payable,/payment_request_view.php,pre-payable,View pre-payable requests. Follow Link: /payment_request_view.php
+36,Payable,/payable_view.php,payable,View payables. Follow Link: /payable_view.php
+37,Voucher,/voucher_view.php,voucher,View vouchers. Follow Link: /voucher_view.php
+38,Petty Cash,/petty_cash_view.php,"petty, cash",Manage petty cash. Follow Link: /petty_cash_view.php
+39,Credit Note,/credit_note_view.php,"credit, note",View credit notes. Follow Link: /credit_note_view.php
+40,Debit Note,/debit_note_view.php,"debit, note",View debit notes. Follow Link: /debit_note_view.php
+41,Bank Accounts,/acc_bank_view.php,"bank, accounts",View bank accounts. Follow Link: /acc_bank_view.php
+42,Invoice-Part Sale,/ps_invoice_view.php,"invoice-part, sale",View part sale invoices. Follow Link: /ps_invoice_view.php
+43,Memo,/memo_view.php,memo,View memos. Follow Link: /memo_view.php
+44,Accounts,/account_view.php,accounts,View account information. Follow Link: /account_view.php
+45,Receipt-Old,/receipt_view_old.php,receipt-old,View old receipts. Follow Link: /receipt_view_old.php
+46,Credits,/receipt_view_pending_settlement.php?c=c,credits,View pending credits. Follow Link: /receipt_view_pending_settlement.php?c=c
+47,Credit Requests,/finance_request_search.php,"credit, requests",View credit requests. Follow Link: /finance_request_search.php
+48,Change Password,/change_ps.php,"change, password",Change your password. Follow Link: /change_ps.php
+49,User,/user_view.php,user,View user information. Follow Link: /user_view.php
+50,Other PO,/other_po_search.php,"other, po",View other purchase orders. Follow Link: /other_po_search.php
+51,Employee,/employee_view.php,employee,View employee information. Follow Link: /employee_view.php
+52,Birthday,/Reminder/birthday.php,birthday,View birthday reminders. Follow Link: /Reminder/birthday.php
+53,Other,/Reminder/other.php,other,View other reminders. Follow Link: /Reminder/other.php
