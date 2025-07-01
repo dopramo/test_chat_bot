@@ -8,8 +8,8 @@ app.secret_key = os.environ.get('SECRET_KEY', 'your_secret_key')
 CORS(app, supports_credentials=True)
 
 # Heroku manages HTTPS, so don't force secure cookies unless needed
-app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
-app.config['SESSION_COOKIE_SECURE'] = False
+app.config['SESSION_COOKIE_SAMESITE'] = 'None'
+app.config['SESSION_COOKIE_SECURE'] = True
 
 def load_menus():
     menus = []
