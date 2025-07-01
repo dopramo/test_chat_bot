@@ -349,9 +349,9 @@
       // });
 
       window.addEventListener("message", function (event) {
-         console.log(event.origin);
+         // console.log(event.origin);
         // Always check the origin for security!
-        if (event.origin === "http://203.94.66.253:8080") {
+        if (event.origin === "http://localhost:8080") {
           const ids = event.data.ids;
           event.source.postMessage("received_ids", event.origin);
           // Send to Flask backend via AJAX/fetch
