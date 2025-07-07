@@ -8,8 +8,8 @@ app.secret_key = os.environ.get('SECRET_KEY', 'your_secret_key')
 CORS(app, supports_credentials=True)
 
 # Heroku manages HTTPS, so don't force secure cookies unless needed
-app.config['SESSION_COOKIE_SAMESITE'] = 'None'
-app.config['SESSION_COOKIE_SECURE'] = True
+app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
+app.config['SESSION_COOKIE_SECURE'] = False
 
 def load_menus():
     menus = []
@@ -17,6 +17,7 @@ def load_menus():
         reader = csv.DictReader(csvfile)
         for row in reader:
             row['id'] = int(row['id'])
+            row['privilege_id'] = int(row['privilege_id'])
             menus.append(row)
     return menus
 
@@ -24,8 +25,7 @@ def load_menus():
 def index():
     return render_template("index.html")
 
-
-# POST: Receive array of IDs, filter, and store in session
+# POST: Receive array of menu IDs, filter, and store in session
 @app.route("/suggest", methods=["POST"])
 def suggest_post():
     data = request.get_json()
@@ -33,15 +33,28 @@ def suggest_post():
     session['filtered_menu_ids'] = list(ids)
     return jsonify({"filtered_menu_ids": session['filtered_menu_ids']})
 
-# GET: Search only within filtered entries in session
+# POST: Receive array of privilege IDs and store in session
+@app.route("/set_privileges", methods=["POST"])
+def set_privileges():
+    data = request.get_json()
+    privilege_ids = set(map(int, data.get("privilege_ids", [])))
+    session['allowed_privilege_ids'] = list(privilege_ids)
+    return jsonify({"allowed_privilege_ids": session['allowed_privilege_ids']})
+
+# GET: Search only within filtered entries in session (by menu id or privilege id)
 @app.route("/suggest", methods=["GET"])
 def suggest_get():
     query = request.args.get("q", "").strip().lower()
-    if 'filtered_menu_ids' not in session:
-        return jsonify({"error": "No filtered menu ids found. Please POST first."}), 400
 
-    ids = set(session.get('filtered_menu_ids', []))
-    filtered_menus = [m for m in load_menus() if m['id'] in ids]
+    # Prefer privilege-based filtering if present, else fallback to filtered_menu_ids
+    if 'allowed_privilege_ids' in session:
+        allowed_privs = set(session['allowed_privilege_ids'])
+        filtered_menus = [m for m in load_menus() if m['privilege_id'] in allowed_privs]
+    elif 'filtered_menu_ids' in session:
+        ids = set(session.get('filtered_menu_ids', []))
+        filtered_menus = [m for m in load_menus() if m['id'] in ids]
+    else:
+        return jsonify({"error": "No privilege or menu ids found. Please POST first."}), 400
 
     menus = []
     exact_match = None
